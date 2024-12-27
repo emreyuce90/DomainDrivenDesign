@@ -3,9 +3,8 @@ using DomainDrivenDesign.Domain.Shared;
 
 namespace DomainDrivenDesign.Domain.Categories {
     public sealed class Category :Entity{
-        public Category(Guid id,Name name, ICollection<Product> products) :base(id){
+        public Category(Guid id,Name name) :base(id){
             Name = name;
-            Products = products;
         }
 
         public Name Name { get; private set; } = default!;

@@ -3,11 +3,10 @@ using DomainDrivenDesign.Domain.Shared;
 
 namespace DomainDrivenDesign.Domain.Products {
     public sealed class Product:Entity {
-        public Product(Guid id,Name name, Money price, int stock, Category category, Guid categoryId):base(id) {
+        public Product(Guid id,Name name, Money price, int stock, Guid categoryId):base(id) {
             Name = name;
             Price = price;
             Stock = stock;
-            Category = category;
             CategoryId = categoryId;
         }
 
