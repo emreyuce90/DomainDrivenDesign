@@ -1,4 +1,5 @@
-﻿using DomainDrivenDesign.Domain.Shared;
+﻿using DomainDrivenDesign.Domain.Abstractions;
+using DomainDrivenDesign.Domain.Shared;
 
 namespace DomainDrivenDesign.Domain.Orders {
     public sealed class Order : Entity {

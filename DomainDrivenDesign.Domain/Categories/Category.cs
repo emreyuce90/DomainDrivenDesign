@@ -1,5 +1,5 @@
-﻿using DomainDrivenDesign.Domain.Products;
-using DomainDrivenDesign.Domain.Shared;
+﻿using DomainDrivenDesign.Domain.Abstractions;
+using DomainDrivenDesign.Domain.Products;
 
 namespace DomainDrivenDesign.Domain.Categories {
     public sealed class Category :Entity{

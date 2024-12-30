@@ -1,6 +1,6 @@
 ﻿namespace DomainDrivenDesign.Domain.Categories {
-    public interface ICategoryRepoistory {
+    public interface ICategoryRepository {
         Task<List<Category>> GetCategoriesAsync(CancellationToken cancellationToken=default);
-        Task CreateCategory(string categoryName,CancellationToken cancellationToken= default);
+        Task<bool> CreateCategory(string categoryName,CancellationToken cancellationToken= default);
     }
 }

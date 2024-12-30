@@ -1,4 +1,4 @@
-﻿namespace DomainDrivenDesign.Domain.Shared {
+﻿namespace DomainDrivenDesign.Domain.Abstractions {
     public abstract class Entity : IEquatable<Entity> {
         public Guid Id { get; set; }
 
