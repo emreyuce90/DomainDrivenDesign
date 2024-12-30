@@ -1,5 +1,6 @@
 ﻿using DomainDrivenDesign.Domain.Abstractions;
 using DomainDrivenDesign.Domain.Products;
+using DomainDrivenDesign.Domain.Users;
 
 namespace DomainDrivenDesign.Domain.Categories {
     public sealed class Category :Entity{
@@ -13,7 +14,8 @@ namespace DomainDrivenDesign.Domain.Categories {
         public void UpdateName(string name) { 
         
             Name = new Name(name);
-        
         }
+
+        public static Category Create(string name) => new Category(Guid.NewGuid(), new Name(name));
     }
 }

@@ -26,5 +26,10 @@ namespace DomainDrivenDesign.Domain.Products {
             CategoryId= categoryId;
         
         }
+
+        public static Product CreateProduct(string name, float price, int stock, Guid categoryId, string currency) {
+            var p = new Product(Guid.NewGuid(),new Name(name),new Money(price,Currency.FromCode(currency)),stock,categoryId);
+            return p;
+        }
     }
 }

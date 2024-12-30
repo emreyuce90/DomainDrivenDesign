@@ -12,7 +12,7 @@ namespace DomainDrivenDesign.Domain.Orders {
         public int OrderNumber { get; private set; }
         public DateTime CreatedDate { get; private set; }
         public OrderStatus OrderStatus { get; private set; }
-        public ICollection<OrderLine> OrderLines { get; private set; }
+        public ICollection<OrderLine> OrderLines { get; private set; } = new List<OrderLine>(); 
 
         //Agregate root
         public void CreateOrderLine(List<OrderLineDto> orderLines) {
