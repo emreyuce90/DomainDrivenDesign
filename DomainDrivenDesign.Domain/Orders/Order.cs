@@ -8,6 +8,9 @@ namespace DomainDrivenDesign.Domain.Orders {
             CreatedDate = createdDate;
             OrderStatus = orderStatus;
         }
+        private Order(Guid id):base(id) {
+            
+        }
 
         public int OrderNumber { get; private set; }
         public DateTime CreatedDate { get; private set; }

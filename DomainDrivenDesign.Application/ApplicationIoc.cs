@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DomainDrivenDesign.Domain.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace DomainDrivenDesign.Application {
@@ -7,7 +8,7 @@ namespace DomainDrivenDesign.Application {
 
             //MediatR IoC Apply
             services.AddMediatR(configuration => {
-                configuration.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+                configuration.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly(),typeof(Entity).Assembly);
             });
             return services;
         }

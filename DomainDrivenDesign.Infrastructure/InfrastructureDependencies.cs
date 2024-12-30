@@ -11,8 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DomainDrivenDesign.Infrastructure {
     public static class InfrastructureDependencies {
-        public static IServiceCollection AddInfraDependenciesExt(this IServiceCollection services, IConfiguration configuration) {
-            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer("Data Source=(localdb)\\ProjectModels;Initial Catalog=domainDrivenDesignDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
+        public static IServiceCollection AddInfraDependenciesExt(this IServiceCollection services, string connectionString) {
+            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionString));
 
             services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<AppDbContext>());
             services.AddScoped<IUserRepository, UserRepository>();

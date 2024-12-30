@@ -3,10 +3,15 @@ using DomainDrivenDesign.Domain.Users;
 
 namespace DomainDrivenDesign.Domain.Users {
     public sealed class User : Entity {
+        private User(Guid id):base(id) {
+            
+        }
         public User(Guid id, Name name, Email email, Password password, Address address) : base(id) {
             Name = name;
             Email = email;
             Password = password;
+            Address = address;
+
         }
 
 

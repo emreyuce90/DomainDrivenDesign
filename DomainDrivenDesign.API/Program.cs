@@ -1,16 +1,17 @@
-
+using DomainDrivenDesign.Application;
+using DomainDrivenDesign.Infrastructure;
 namespace DomainDrivenDesign.API {
     public class Program {
         public static void Main(string[] args) {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddAuthorization();
+            builder.Services.AddControllers();
 
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            //builder.AddInfraDependenciesExt();
+            builder.Services.AddApplicationDependenciesExt();
+            builder.Services.AddInfraDependenciesExt(builder.Configuration.GetConnectionString("SqlServer"));
 
             var app = builder.Build();
 
@@ -19,6 +20,7 @@ namespace DomainDrivenDesign.API {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.MapControllers();
 
             app.UseHttpsRedirection();
 
